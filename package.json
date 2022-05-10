@@ -1,0 +1,22 @@
+{
+  "name": "multicloud",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:aws": "sls offline --config serverless-aws.yml --httpPort 4000",
+    "deploy:aws": "sls deploy --config serverless-aws.yml",
+    "undeploy:aws": "sls remove --config serverless-aws.yml",
+    "start:azure": "sls offline --config serverless-azure.yml",
+    "deploy:azure": "sls deploy --config serverless-azure.yml",
+    "undeploy:azure": "sls remove --config serverless-azure.yml"
+  },
+  "dependencies": {
+    "@multicloud/sls-aws": "^0.1.1",
+    "@multicloud/sls-azure": "^0.1.1",
+    "@multicloud/sls-core": "^0.1.1"
+  },
+  "devDependencies": {
+    "serverless-azure-functions": "^2.1.1",
+    "serverless-offline": "^8.3.1"
+  }
+}

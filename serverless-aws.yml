@@ -1,0 +1,25 @@
+service: sls-nodejs-multicloud-example
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ${env:AWS_REGION, 'us-east-2'}
+  lambdaHashingVersion: 20201221
+  stage: api
+
+plugins:
+  - serverless-offline
+
+functions:
+  hello:
+    handler: index.hello
+    events:
+      - http:
+          method: GET
+          path: /hello
+  goodbye:
+    handler: index.goodbye
+    events:
+      - http:
+          method: GET
+          path: /goodbye

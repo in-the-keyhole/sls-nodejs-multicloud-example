@@ -1,0 +1,6 @@
+node_modules
+.serverless
+.devcontainer/.env
+*/function.json
+host.json
+.env
