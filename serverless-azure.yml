@@ -19,10 +19,11 @@ provider:
 
 plugins:
   - serverless-azure-functions
+  - serverless-webpack
 
 functions:
   hello:
-    handler: index.hello
+    handler: src/handlers/hello.sayHello
     apim:
       api: v1
       operations:
@@ -36,7 +37,7 @@ functions:
             - GET
           authLevel: anonymous
   goodbye:
-    handler: index.goodbye
+    handler: src/handlers/goodbye.sayGoodbye
     apim:
       api: v1
       operations:
@@ -49,3 +50,7 @@ functions:
           methods:
             - GET
           authLevel: anonymous
+custom:
+  webpack:
+    packager: "yarn"
+    includeModules: true

@@ -9,17 +9,23 @@ provider:
 
 plugins:
   - serverless-offline
+  - serverless-webpack
 
 functions:
   hello:
-    handler: index.hello
+    handler: src/handlers/hello.sayHello
     events:
       - http:
           method: GET
           path: /hello
   goodbye:
-    handler: index.goodbye
+    handler: src/handlers/goodbye.sayGoodbye
     events:
       - http:
           method: GET
           path: /goodbye
+
+custom:
+  webpack:
+    packager: "yarn"
+    includeModules: true

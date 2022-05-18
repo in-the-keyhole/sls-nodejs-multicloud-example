@@ -4,3 +4,4 @@ node_modules
 */function.json
 host.json
 .env
+.webpack
